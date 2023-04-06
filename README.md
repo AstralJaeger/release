@@ -4,6 +4,8 @@
 ![License: MIT](https://img.shields.io/github/license/AstralJaeger/release)
 ![build](https://github.com/AstralJaeger/foldersorter/actions/workflows/build.yml/badge.svg?branch=master)
 
+**This action is currently under active development**
+
 A GitHub Action to create automatic releases with SemVer or date tagging. 
 
 This repository is published under the MIT license, 

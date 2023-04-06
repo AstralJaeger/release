@@ -1,6 +1,6 @@
 {
   "name": "node",
-  "version": "1.0.0",
+  "version": "0.1.0-a",
   "description": "A GitHub Action to create releases with artifacts and semver tagging",
   "main": "index.js",
   "scripts": {
@@ -50,6 +50,7 @@
   "dependencies": {
     "@actions/core": "1.10.0",
     "@actions/github": "5.1.1",
+    "@octokit/core": "^4.2.0",
     "log4js": "6.9.1"
   },
   "engines": {

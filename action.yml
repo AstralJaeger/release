@@ -2,6 +2,9 @@ name: 'Release'
 author: 'AstraJaeger'
 description: 'Creates a release and publishes artifacts'
 inputs:
+  token:
+    description: GitHub Repo Token
+    required: true
   title:
     description: 'Release Title'
     required: true

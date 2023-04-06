@@ -1,0 +1,17 @@
+name: 'Release'
+author: 'AstraJaeger'
+description: 'Creates a release and publishes artifacts'
+inputs:
+  title:
+    description: 'Release Title'
+    required: true
+  description:
+    description: 'Release Description'
+    required: false
+    default: ''
+outputs:
+  releaseUrl:
+    description: 'the url for the release'
+runs:
+  using: 'node16'
+  main: 'index.js'

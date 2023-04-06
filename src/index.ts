@@ -1,16 +1,6 @@
-import log4js from "log4js";
+import * as core from '@actions/core';
+import { main } from "./app";
 
-log4js.configure({
-  appenders: { console: { type: "console" } },
-  categories: { default: { appenders: ["console"], level: "info" } },
-});
-
-const log = log4js.getLogger();
-
-log.info(`Sentry Token set: `);
-
-process.on("SIGINT", () => {
-  // Graceful shutdown here
-  log.info("Terminating application gracefully.");
-  process.exit();
-});
+main()
+  .then(() => core.info("Done."))
+  .catch((err) => core.error(`Error during execution: ${err}`))

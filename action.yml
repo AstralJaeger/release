@@ -1,9 +1,9 @@
-name: 'Release'
+name: 'ActionRelease'
 author: 'AstraJaeger'
 description: 'Creates a release and publishes artifacts'
 inputs:
   token:
-    description: GitHub Repo Token
+    description: 'GitHub Repo Token'
     required: true
   title:
     description: 'Release Title'
@@ -18,3 +18,6 @@ outputs:
 runs:
   using: 'node16'
   main: 'index.js'
+branding:
+  icon: 'play'
+  color: 'blue'

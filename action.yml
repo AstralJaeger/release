@@ -5,14 +5,36 @@ inputs:
   token:
     description: 'GitHub Repo Token'
     required: true
+  tag:
+    description: 'Release tag'
+    required: true
   title:
-    description: 'Release Title'
+    description: 'Release title'
     required: true
   description:
-    description: 'Release Description'
+    description: 'Release description'
     required: false
     default: ''
+  draft:
+    description: 'Release marked as draft'
+    required: false
+    default: ''
+  prerelease:
+    description: 'Release marked as prerelease'
+    required: false
+    default: ''
+  changelog:
+    description: 'Generate a commit-history based changelog'
+    required: false
+    default: 'false'
+  files:
+    description: 'Files for the release'
+    required: false
+    default: ''
+
 outputs:
+  releaseTag:
+    description: ''
   releaseUrl:
     description: 'the url for the release'
 runs:

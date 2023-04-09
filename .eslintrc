@@ -16,12 +16,10 @@
   },
   "plugins": [
     "@typescript-eslint",
-    "prettier",
-    "spellcheck"
+    "prettier"
   ],
   "rules": {
     "valid-jsdoc": "off",
-    "prettier/prettier": "warn",
-    "spellcheck/spell-checker": ["warn"]
+    "prettier/prettier": "warn"
   }
 }

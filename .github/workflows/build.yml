@@ -38,11 +38,11 @@ jobs:
         run: pnpm lint
       - name: Build
         run: pnpm build
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v6
         with:
           name: index.js
           path: dist/index.js
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v6
         with:
           name: licenses.txt
           path: dist/licenses.txt

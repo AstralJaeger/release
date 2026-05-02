@@ -12,9 +12,16 @@ updates:
     assignees:
       - "AstralJaeger"
     commit-message:
-        prefix: "npm"
+      prefix: "npm"
     open-pull-requests-limit: 5
     versioning-strategy: increase-if-necessary
+    cooldown:
+      default-days: 7
+    groups:
+      production-dependencies:
+        dependency-type: "production"
+      development-dependencies:
+        dependency-type: "development"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -24,3 +31,6 @@ updates:
     commit-message:
       prefix: "actions"
     open-pull-requests-limit: 5
+    groups:
+      production-dependencies:
+        dependency-type: "production"

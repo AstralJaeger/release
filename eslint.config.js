@@ -4,6 +4,12 @@ const prettierPlugin = require('eslint-plugin-prettier');
 const prettierConfig = require('eslint-config-prettier');
 const googleConfig = require('eslint-config-google');
 
+// Remove rules that were deleted in ESLint v9
+const removedInV9 = ['valid-jsdoc', 'require-jsdoc'];
+const googleRules = Object.fromEntries(
+  Object.entries(googleConfig.rules).filter(([key]) => !removedInV9.includes(key))
+);
+
 module.exports = [
   {
     ignores: [
@@ -18,6 +24,14 @@ module.exports = [
   },
   {
     files: ['src/**/*.ts'],
+    rules: googleRules,
+  },
+  {
+    files: ['src/**/*.ts'],
+    ...prettierConfig,
+  },
+  {
+    files: ['src/**/*.ts'],
     languageOptions: {
       parser: tsParser,
       parserOptions: {
@@ -29,10 +43,6 @@ module.exports = [
       prettier: prettierPlugin,
     },
     rules: {
-      ...googleConfig.rules,
-      ...prettierConfig.rules,
-      'valid-jsdoc': 'off',
-      'require-jsdoc': 'off',
       'prettier/prettier': 'warn',
       // TypeScript handles undefined variable checks
       'no-undef': 'off',
